@@ -27,16 +27,11 @@ import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
 
-  {
-    component: CNavItem,
-    name: 'Show / Hide Home Icon',
-    to: '/settings/homeicon',
-    icon: <CIcon icon={cilHome} customClassName="nav-icon" />,
-  },
+ 
 
   {
     component: CNavItem,
-    name: 'AdminDashboard',
+    name: 'Dashboard',
     to: '/admin/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
@@ -122,7 +117,12 @@ const _nav = [
     to: '/productcolor/sub/list',
     icon: <CIcon icon={cilDrop} customClassName="nav-icon text-info" />,
   },
-
+ {
+    component: CNavItem,
+    name: 'Show / Hide Home Icon',
+    to: '/settings/homeicon',
+    icon: <CIcon icon={cilHome} customClassName="nav-icon" />,
+  },
   // 🔴 LOGOUT
   {
     component: CNavItem,
