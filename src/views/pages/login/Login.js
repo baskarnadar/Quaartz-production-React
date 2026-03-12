@@ -17,7 +17,8 @@ import {
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 import { Link } from 'react-router-dom'
-import { API_BASE_URL } from '../../../config' 
+import { API_BASE_URL } from '../../../config'
+
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -26,40 +27,58 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
+      setError('')
+
+      const cleanUsername = String(username || '').trim()
+      const cleanPassword = String(password || '')
+        .trim()
+        .replace(/^"(.*)"$/, '$1')
+        .replace(/^'(.*)'$/, '$1')
+
+      const payload = {
+        username: cleanUsername,
+        password: cleanPassword,
+      }
+
+      console.log('LOGIN API URL:', `${API_BASE_URL}/user/isUserValid`)
+      console.log('USERNAME STATE:', username)
+      console.log('PASSWORD STATE:', password)
+      console.log('CLEAN USERNAME:', cleanUsername)
+      console.log('CLEAN PASSWORD:', cleanPassword)
+      console.log('LOGIN PAYLOAD:', payload)
+
       const response = await fetch(`${API_BASE_URL}/user/isUserValid`, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    username,
-    password,
-  }),
-})
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
 
       const data = await response.json()
+
       console.log('API Response:', data)
-      console.log('data.data.token', data?.data?.token)
+      console.log('data?.data?.token:', data?.data?.token)
+      console.log('data?.data?.UserType:', data?.data?.UserType)
 
       if (response.ok && data?.data?.token) {
-        // ✅ Save token to localStorage
-        localStorage.setItem('allowedPages', JSON.stringify(data.allowedPages))
+        localStorage.setItem('allowedPages', JSON.stringify(data?.allowedPages || []))
         localStorage.setItem('token', data.data.token)
-        console.log("token");
-console.log(data.data.token);
-        // ✅ Optionally save user data
-        localStorage.setItem('userId', data.data.UserID)
-        localStorage.setItem('username', data.data.UserName)
-        localStorage.setItem('usertype', data.data.usertype)
 
-        if (data.data.usertype === 'ADMIN') {
+        localStorage.setItem('userId', data?.data?.UserID || '')
+        localStorage.setItem('username', data?.data?.UserName || '')
+        localStorage.setItem('usertype', data?.data?.UserType || '')
+
+        console.log('UserType:', data?.data?.UserType)
+
+        if (data?.data?.UserType === 'ADMIN') {
           navigate('/admin/dashboard')
         } else {
           navigate('/dashboard')
         }
       } else {
         handleLogout()
-        setError(data.message || 'Invalid credentials')
+        setError(data?.message || 'Invalid credentials')
       }
     } catch (err) {
       console.error('Login error:', err)
@@ -68,7 +87,6 @@ console.log(data.data.token);
     }
   }
 
-  // ✅ Logout function (your existing logic)
   const handleLogout = () => {
     localStorage.clear()
     sessionStorage.clear()
@@ -105,10 +123,15 @@ console.log(data.data.token);
                         <CIcon icon={cilUser} />
                       </CInputGroupText>
                       <CFormInput
+                        id="login-username"
+                        name="login_username"
                         placeholder="Username"
-                        autoComplete="username"
+                        autoComplete="off"
                         value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        onChange={(e) => {
+                          console.log('USERNAME INPUT CHANGED:', e.target.value)
+                          setUsername(e.target.value)
+                        }}
                       />
                     </CInputGroup>
 
@@ -117,11 +140,16 @@ console.log(data.data.token);
                         <CIcon icon={cilLockLocked} />
                       </CInputGroupText>
                       <CFormInput
+                        id="login-password"
+                        name="login_password"
                         type="password"
                         placeholder="Password"
-                        autoComplete="current-password"
+                        autoComplete="new-password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => {
+                          console.log('PASSWORD INPUT CHANGED:', e.target.value)
+                          setPassword(e.target.value)
+                        }}
                       />
                     </CInputGroup>
 
@@ -131,11 +159,7 @@ console.log(data.data.token);
                           Login
                         </CButton>
                       </CCol>
-                      <CCol xs={6} className="text-right">
-                        <CButton color="link" className="px-0">
-                          Forgot password?
-                        </CButton>
-                      </CCol>
+                     
                     </CRow>
                   </CForm>
                 </CCardBody>
@@ -144,16 +168,11 @@ console.log(data.data.token);
               <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
                 <CCardBody className="text-center">
                   <div>
-                    <h2>Sign up</h2>
+                    <h2> </h2>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua.
+                      
                     </p>
-                    <Link to="/register">
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                        Register Now!
-                      </CButton>
-                    </Link>
+                    
                   </div>
                 </CCardBody>
               </CCard>

@@ -18,22 +18,20 @@ import {
   cilBasket,
   cilExcerpt,
   cilAccountLogout,
+  cilHome,
+  cilLayers,
+  cilTag,
+  cilMap,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
-  {
-    component: CNavItem,
-    name: 'Dashboard',
-    to: '/dashboard',
-    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-  },
 
   {
     component: CNavItem,
     name: 'Show / Hide Home Icon',
     to: '/settings/homeicon',
-    icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilHome} customClassName="nav-icon" />,
   },
 
   {
@@ -61,7 +59,7 @@ const _nav = [
     component: CNavItem,
     name: 'Category',
     to: '/forms/category',
-    icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilLayers} customClassName="nav-icon" />,
   },
 
   {
@@ -75,28 +73,28 @@ const _nav = [
     component: CNavItem,
     name: 'Painter',
     to: '/painter/painterinfo',
-    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
   },
 
   {
     component: CNavItem,
     name: 'Offers',
     to: '/offers/offerlist',
-    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilTag} customClassName="nav-icon" />,
   },
 
   {
     component: CNavItem,
     name: 'Banner',
     to: '/banner/list',
-    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilExternalLink} customClassName="nav-icon" />,
   },
 
   {
     component: CNavItem,
     name: 'User List',
     to: '/user/list',
-    icon: <CIcon icon={cilExcerpt} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
   },
 
   {
@@ -108,7 +106,7 @@ const _nav = [
     component: CNavItem,
     name: 'City',
     to: '/city/list',
-    icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilMap} customClassName="nav-icon" />,
   },
 
   {
@@ -122,10 +120,10 @@ const _nav = [
     component: CNavItem,
     name: 'Sub Product Color',
     to: '/productcolor/sub/list',
-    icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+    icon: <CIcon icon={cilDrop} customClassName="nav-icon text-info" />,
   },
 
-  // 🔴 LOGOUT (RED & CLEAR)
+  // 🔴 LOGOUT
   {
     component: CNavItem,
     name: 'Logout',
