@@ -74,7 +74,7 @@ const StoreList = React.lazy(() => import('./views/store/list'))
 const StoreNew = React.lazy(() => import('./views/store/new'))
 
 // ✅ LOGOUT PAGE (NEW)
-const Logout = React.lazy(() => import('./views/pages/login/Logout'))
+const Logout = React.lazy(() => import('./views/pages/login/logout'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
