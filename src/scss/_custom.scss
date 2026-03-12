@@ -1,0 +1,390 @@
+.sidebar-dark {
+  --cui-body-bg: #22326b; // your custom background
+}// Here you can add other styles
+.sidebar-nav .nav-link {
+   
+    color: #ffffff;
+    padding-top:2px;
+    padding-bottom:2px;
+    
+}
+.sidebar-nav .nav-title {
+   
+    color: #ffffff;
+}
+.sidebar-nav .nav-group.show .nav-group-toggle {
+    color: #ffffff;
+}
+.sidebar-nav .nav-icon {
+    color: #ffffff;
+}
+ 
+.add-product-button {
+padding:5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #797a80;
+  color: white;
+  border: none;
+  border-radius: 5px; 
+  min-width: 100px;
+  text-align:  center;;
+  min-width: 150px;
+}
+
+.add-product-button:hover {
+  background-color: #797a80;
+}
+
+.admin-buttonv1 {
+  padding:5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #797a80;
+  color: white;
+  border: none;
+  border-radius: 5px; 
+  min-width: 100px;
+  text-align:  center;;
+}
+
+.admin-buttonv1:hover {
+  background-color: #797a80;
+}
+
+.add-product-buttonv2 {
+  padding:5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #4a5ea5;
+  color: white;
+  border: none;
+  border-radius: 5px; 
+  min-width: 100px;
+  text-align:  center;;
+}
+
+.add-product-buttonv2:hover {
+  background-color: #4a5ea5;
+}
+/* Grid Table Row */
+/* ProductList.css */
+
+.grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.grid-table thead tr {
+  background-color: #d6d7dc; /* light gray background */
+    color: #090909;
+}
+
+.grid-table th,
+.grid-table td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Optional: style for hover effect on rows */
+.grid-table tbody tr:hover {
+  background-color: #fafafa;
+}
+.grid-table tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* white */
+}
+
+.grid-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* light grey */
+}
+
+
+/* --------------------------------- Grid ----------------------------------------- */
+/* ProductList.css */
+
+.product-image-circle {
+  background-color: #f0f0f0; /* light grey background */
+  border-radius: 50%;        /* makes the container circular */
+  display: inline-block;     /* shrink-wrap the container */
+  padding: 5px;              /* space between image and background */
+  max-width: 505px;          /* slightly larger to accommodate padding */
+  box-sizing: content-box; 
+  min-height: 50px; 
+  min-width: 50px; /* ensure padding doesn’t affect max-width */
+}
+
+.product-image-circle img {
+  display: block;
+  border-radius: 50%;        /* make image itself circular */
+  max-width: 100px;          /* keep image size */
+  height: auto;
+  max-height: 50px;
+}
+
+/* Page Number --------------------------------------------- */
+.pagination-container {
+  margin-top: 20px;
+}
+
+.pagination-button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: white;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.pagination-button.active {
+  background-color: #344a9a;
+  cursor: default;
+  pointer-events: none;
+  color :#ffffff;
+}
+
+.pagination-button:disabled {
+  cursor: not-allowed;
+ 
+  pointer-events: none;
+}
+
+/* Page Number --------------------------------------------- */
+
+.page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.admin-txt-box
+{
+  border:1px solid rgb(200, 198, 198);
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 10px;
+  margin: 5px;;
+  
+}
+
+/* model window------------------------------------ Begin------*/
+ 
+.modal-overlay {
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;      /* Vertically center */
+  justify-content: center;  /* Horizontally center */
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 4W00px;       /* Max width 300px */
+  width:100%;             /* Responsive width */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.modal-content_50 {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 4W00px;       /* Max width 300px */
+  width:50%;             /* Responsive width */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* model window------------------------------------ Begin------*/
+
+.button-row {
+  display: flex;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.input-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 15px;
+  color: #333;
+  font-size: 14px;
+}
+.trash-icon {
+  color: red;
+  cursor: pointer;
+    margin: 5px;
+   font-size:20px;
+}
+.edit-icon
+{
+   color: rgb(4, 173, 102);
+  cursor: pointer;
+  margin: 5px;
+  font-size:20px;
+}
+.rowbg
+{
+  background-color: '#f9f9f9';
+   font-weight: 'bold' 
+  }
+  .custommoney
+  {display: 'flex'; align-items: 'center'; gap: '5px'
+
+  }
+
+  /* ProductCategoryDropdown.css */
+
+.form-container {
+  width:95%;
+  margin: auto;
+  padding: 20px;
+ 
+  border-radius: 8px;
+  border-radius: 10px;
+}
+
+.form-heading {
+  text-align:left;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.form-row label {
+  flex: 0 0 150px;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 1;
+  padding: 8px;
+}
+
+.file-preview {
+  max-height: 80px;
+  margin-left: 10px;
+}
+
+.textarea-full {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.button-group {
+  margin-top: 20px;
+  
+}
+
+.button-group button {
+  padding: 8px 20px;
+  margin-left: 10px;
+}
+
+.message-success {
+  color: green;
+  margin-top: 10px;
+}
+
+.message-error {
+  color: red;
+  margin-top: 10px;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+ 
+}
+
+.readonly-value {
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+   width: 100%;;
+}
+
+.file-preview {
+  max-width: 120px;
+  max-height: 120px;
+  display: block;
+  margin-top: 0.5rem;
+}
+.UserImage
+{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border:1px solid rgb(201, 199, 199);
+}
+.custom-top-5
+{
+  margin-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;;
+}
+
+/* editor ------------------------*/
+.quill-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Set the editor height */
+.ql-container {
+  height: 300px !important;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.ql-toolbar.ql-snow {
+  border-radius: 4px 4px 0 0;
+}
+
+.ql-container.ql-snow {
+  border-radius: 0 0 4px 4px;
+}
+.spacew{
+width: 10px;;
+}
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+}
+.image-preview
+{
+  max-width: 300px;
+}
