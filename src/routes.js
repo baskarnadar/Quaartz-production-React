@@ -11,7 +11,7 @@ const Painter = React.lazy(() => import('./views/painter/painterinfo/list'))
 const AddPainter = React.lazy(() => import('./views/painter/painterinfo/new'))
 const ViewPainter = React.lazy(() => import('./views/painter/painterinfo/view'))
 
-// ✅ Home Icon Settings
+// Home Icon Settings
 const HomeIconSettings = React.lazy(() => import('./views/settings/icon/homeicon'))
 
 // Base
@@ -57,10 +57,8 @@ const EditProduct = React.lazy(() => import('./views/forms/product/modify'))
 const prdsizelist = React.lazy(() => import('./views/forms/prdsize/prdsizelist'))
 const prdnewsize = React.lazy(() => import('./views/forms/prdsize/prdnewsize'))
 
-// ✅ EXISTING Product Color
 const prdcolorlist = React.lazy(() => import('./views/forms/prdcolor/prdcolorlist'))
 
-// ✅ Lookup → Product Colors
 const MainProductColorList = React.lazy(() => import('./views/lookupdata/productcolor/main/list'))
 const MainProductColorNew = React.lazy(() => import('./views/lookupdata/productcolor/main/new'))
 const MainProductColorModify = React.lazy(() => import('./views/lookupdata/productcolor/main/modify'))
@@ -69,11 +67,9 @@ const SubProductColorList = React.lazy(() => import('./views/lookupdata/productc
 const SubProductColorNew = React.lazy(() => import('./views/lookupdata/productcolor/sub/new'))
 const SubProductColorModify = React.lazy(() => import('./views/lookupdata/productcolor/sub/modify'))
 
-// Store
 const StoreList = React.lazy(() => import('./views/store/list'))
 const StoreNew = React.lazy(() => import('./views/store/new'))
 
-// ✅ LOGOUT PAGE (NEW)
 const Logout = React.lazy(() => import('./views/pages/login/logout'))
 
 const routes = [
@@ -126,6 +122,10 @@ const routes = [
   // Category / Product
   { path: '/forms/category', name: 'Category', element: category },
   { path: '/forms/category/new', name: 'New Category', element: newcategory },
+
+  // ✅ ADDED ROUTE (your request)
+  { path: '/forms/newcategory', name: 'New Category Alias', element: newcategory },
+
   { path: '/forms/category/prdsubcategory', name: 'Product SubCategory', element: subcategory },
 
   { path: '/forms/product/productlist', name: 'Product List', element: productlist },
@@ -137,17 +137,14 @@ const routes = [
 
   { path: '/forms/prdcolor/prdcolorlist', name: 'Product Color', element: prdcolorlist },
 
-  // ✅ Main Product Color
   { path: '/productcolor/main/list', name: 'Main Product Color', element: MainProductColorList },
   { path: '/productcolor/main/new', name: 'New Main Product Color', element: MainProductColorNew },
   { path: '/productcolor/main/modify', name: 'Modify Main Product Color', element: MainProductColorModify },
 
-  // ✅ Sub Product Color (ADD / MODIFY / LIST)
   { path: '/productcolor/sub/list', name: 'Sub Product Color', element: SubProductColorList },
   { path: '/productcolor/sub/new', name: 'New Sub Product Color', element: SubProductColorNew },
   { path: '/productcolor/sub/modify', name: 'Modify Sub Product Color', element: SubProductColorModify },
 
-  // ✅ Logout route (NEW)
   { path: '/logout', name: 'Logout', element: Logout },
 ]
 
