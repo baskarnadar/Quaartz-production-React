@@ -279,23 +279,8 @@ const CategoryList = () => {
               </p>
             )}
 
-            <div style={{ marginBottom: '12px' }}>
-              <label style={{ display: 'block', marginBottom: '6px', fontWeight: 'bold' }}>
-                CategoryID
-              </label>
-              <input
-                type="text"
-                value={modifyCategoryID}
-                readOnly
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  border: '1px solid #ccc',
-                  borderRadius: '6px',
-                  backgroundColor: '#f5f5f5',
-                }}
-              />
-            </div>
+            {/* ✅ CategoryID is hidden from UI but still kept in state and sent in payload */}
+            <input type="hidden" value={modifyCategoryID} readOnly />
 
             <div style={{ marginBottom: '12px' }}>
               <label style={{ display: 'block', marginBottom: '6px', fontWeight: 'bold' }}>
